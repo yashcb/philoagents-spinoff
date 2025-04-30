@@ -1,0 +1,62 @@
+[
+    {
+        "id": "plato",
+        "urls": [
+            "https://plato.stanford.edu/entries/plato/"
+        ]
+    },
+    {
+        "id": "aristotle",
+        "urls": [
+            "https://plato.stanford.edu/entries/aristotle/"
+        ]
+    },
+    {
+        "id": "socrates",
+        "urls": [
+            "https://plato.stanford.edu/entries/socrates/"
+        ]
+    },
+    {
+        "id": "descartes",
+        "urls": [
+            "https://plato.stanford.edu/entries/descartes/"
+        ]
+    },
+    {
+        "id": "leibniz",
+        "urls": [
+            "https://plato.stanford.edu/entries/leibniz/"
+        ]
+    },
+    {
+        "id": "kant",
+        "urls": [
+            "https://plato.stanford.edu/entries/kant/"
+        ]
+    },
+    {
+        "id": "nietzsche",
+        "urls": [
+            "https://plato.stanford.edu/entries/turing/"
+        ]
+    },
+    {
+        "id": "spinoza",
+        "urls": [
+            "https://plato.stanford.edu/entries/spinoza/"
+        ]
+    },
+    {
+        "id": "arendt",
+        "urls": [
+            "https://plato.stanford.edu/entries/arendt/"
+        ]
+    },
+    {
+        "id": "hesse",
+        "urls": [
+            "https://en.wikipedia.org/wiki/Hermann_Hesse"
+        ]
+    }
+]
