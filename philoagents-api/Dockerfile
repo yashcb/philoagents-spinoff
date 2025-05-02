@@ -1,10 +1,17 @@
 FROM python:3.11-slim
 
+# Install system dependencies required for Python packages.
+RUN apt-get update && apt-get install -y build-essential libpq-dev
+
 # Install uv.
 COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
 
 # Set the working directory.
 WORKDIR /app
+
+# Set up the virtual environment.
+ENV VIRTUAL_ENV=/app/.venv
+ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 
 # Set PYTHONPATH to include the /app directory.
 ENV PYTHONPATH=/app

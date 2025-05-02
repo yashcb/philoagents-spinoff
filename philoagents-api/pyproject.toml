@@ -7,6 +7,7 @@ license = { text = "MIT" }
 requires-python = ">=3.11"
 dependencies = [
     "fastapi[standard]>=0.115.8",
+    "uvicorn>=0.22.0",
     "langchain-core>=0.3.34",
     "langchain-groq>=0.2.4",
     "langchain-mongodb>=0.4.0",
