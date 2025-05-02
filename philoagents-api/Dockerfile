@@ -14,4 +14,4 @@ RUN uv sync --frozen --no-cache
 COPY src/philoagents philoagents/
 COPY tools tools/
 
-CMD ["/app/.venv/bin/uvicorn", "run", "philoagents/infrastructure/api.py", "--port", "8000", "--host", "0.0.0.0"]
+CMD ["/app/.venv/bin/uvicorn", "philoagents.infrastructure.api:app", "--host", "0.0.0.0", "--port", "${PORT:-8000}"]
