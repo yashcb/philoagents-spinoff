@@ -4,8 +4,9 @@ class ApiService {
 
     if (isHttps) {
       console.log("Using GitHub Codespaces");
-      const currentHostname = window.location.hostname;
-      this.apiUrl = `https://${currentHostname.replace("8080", "8000")}`;
+      //const currentHostname = window.location.hostname;
+      //this.apiUrl = `https://${currentHostname.replace("8080", "8000")}`;
+      this.apiUrl = "http://44.205.6.41:8000/";
     } else {
       this.apiUrl = "http://localhost:8000";
     }

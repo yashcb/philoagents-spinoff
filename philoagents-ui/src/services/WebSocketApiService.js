@@ -19,10 +19,11 @@ class WebSocketApiService {
     const isHttps = window.location.protocol === "https:";
 
     if (isHttps) {
-      console.log("Using GitHub Codespaces");
+      /*console.log("Using GitHub Codespaces");
       const currentHostname = window.location.hostname;
       console.log("############## Current hostname:", currentHostname);
-      return `ws://${currentHostname.replace("8080", "8000")}`;
+      return `ws://${currentHostname.replace("8080", "8000")}`;*/
+      return "ws://44.205.6.41:8000/";
     }
 
     return "ws://localhost:8000";
