@@ -1,33 +1,27 @@
 FROM python:3.11-slim
 
-# Install system dependencies required for Python packages.
-RUN apt-get update && apt-get install -y build-essential libpq-dev
-
 # Install uv.
 COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
 
 # Set the working directory.
 WORKDIR /app
 
-# Set PYTHONPATH to include the /app directory.
-ENV PYTHONPATH=/app
-
 # Install the application dependencies.
 COPY uv.lock pyproject.toml README.md ./
-RUN uv sync --frozen --no-cache
+RUN uv sync --frozen
+
+# Ensure the application dependencies are installed in the system PATH.
+ENV PATH="/app/.venv/bin:$PATH"
 
 # Copy the application into the container.
 COPY src/philoagents philoagents/
 COPY tools tools/
 
-# Copy the .env file into the container
-COPY .env /app/.env
+# Expose the port for Google Cloud Run.
+EXPOSE 8080
 
-# Debugging: List the contents of the /app directory.
-RUN ls -la /app && ls -la /app/philoagents
+# Use the PORT environment variable provided by Cloud Run.
+ENV PORT=8080
 
-# Expose the port Render will use.
-EXPOSE 8000
-
-# Use the PORT environment variable provided by Render.
-CMD sh -c "source /app/.env && /app/.venv/bin/uvicorn philoagents.infrastructure.api:app --host 0.0.0.0 --port ${PORT:-8000}"
+# Run the application using uvicorn.
+CMD ["uvicorn", "philoagents.infrastructure.api:app", "--host", "0.0.0.0", "--port", "8080"]

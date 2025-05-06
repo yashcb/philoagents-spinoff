@@ -6,7 +6,7 @@ class ApiService {
       console.log("Using GitHub Codespaces");
       //const currentHostname = window.location.hostname;
       //this.apiUrl = `https://${currentHostname.replace("8080", "8000")}`;
-      this.apiUrl = "http://44.205.6.41:8000/";
+      this.apiUrl = "https://philoagents-api-824679752957.asia-south1.run.app/";
     } else {
       this.apiUrl = "http://localhost:8000";
     }

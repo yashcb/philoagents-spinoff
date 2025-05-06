@@ -13,7 +13,7 @@ export class Preloader extends Scene {
     this.load.image("logo", "logo.png");
 
     // Audio assets
-    this.load.audio("backgroundMusic", "audio/birds_sound.mp3");
+    this.load.audio("backgroundMusic", "audio/TransientForest.mp3");
 
     // Tilesets
     this.load.image("tuxmon-tiles", "tilesets/tuxmon-sample-32px-extruded.png");
