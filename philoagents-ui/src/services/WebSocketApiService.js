@@ -23,10 +23,10 @@ class WebSocketApiService {
       const currentHostname = window.location.hostname;
       console.log("############## Current hostname:", currentHostname);
       return `ws://${currentHostname.replace("8080", "8000")}`;*/
-      return "wss://philoagents-api-824679752957.asia-south1.run.app/ws/chat";
+      return "wss://philoagents-api-824679752957.asia-south1.run.app";
     }
 
-    return "ws://localhost:8000/ws/chat";
+    return "ws://localhost:8000";
   }
 
   connect() {
